@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>验证码生成器</title>
+    <script src="./main.js"></script>
+</head>
+<body>
+    <div class="v-code">
+        <div class="code_show">
+            <span class="code" id="checkCode">adghe</span>
+            <div id="linkbt">看不清换一张</div>
+        </div>
+        <div class="code_input">
+            <label for="">验证码：</label>
+            <input type="text" id="inputCode"/>
+            <span id="text_show "></span>
+        </div>
+        <input type="button" value="确定" id="Button1">
+    </div>
+    <script>
+        var code=document.getElementById("checkCode").innerText
+        var code=getVerifyCode()
+        console.log(code)
+        var btn=document.getElementById("linkbt")
+        btn.onclick=function(){
+            var checkCode=document.getElementById("checkCode").innerText=getVerifyCode()
+            console.log(checkCode)
+        }
+        // 点击确定按钮验证输入框中验证码
+        document.getElementById("Button1").onclick=function(){
+                var inputCode=document.getElementById("inputCode")
+            var res=inputCode.value
+            console.log(res);
+            if(res!=code){
+                alert('输入的验证码错误');
+                inputCode.value=''
+                return false
+            }
+        }
+        
+    </script>
+</body>
+</html>  
