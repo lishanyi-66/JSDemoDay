@@ -5,9 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>支付页面</title>
+    <!-- 引入外部css -->
     <style type="text/css">
         @import url(./style.css);
     </style>
+    <!-- 引入外部js -->
+    <script type="text/javascript" src="./main.js"></script>
 </head>
 <body>
     <div class="box">
@@ -28,5 +31,14 @@
         <!--top-->
         
     </div>
+    <script type="text/javascript">
+        Btn[1].onclick=function(){
+            // console.log(1)
+            let res = window.confirm('你确定支付吗')
+            if(res)(
+                location.href='./succ.html'
+            )
+        }
+    </script>
 </body>
 </html>
