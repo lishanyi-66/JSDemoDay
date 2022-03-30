@@ -5,14 +5,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>搜索数据展现</title>
+    <script type="text/javascript" src="./main.js"></script>
+    <style>
+        *{
+            padding:0;
+            margin: 0;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+          
+        input{
+            outline:none;
+            border:none;
+            
+        }
+        .search{
+            position: relative;
+        }
+        #value{
+            width: 500px;
+            height: 44px;
+            border-radius: 10px;
+            border: 1px solid #999;
+            padding-left: 10px;
+            font-size: 18px;
+            /* position: relative; */
+        }
+        #sub{
+            width: 120px;
+            height: 44px;
+            background-color:#4662d9 ;
+            color: #fff;
+            border-radius: 10px;
+        }
+        .show{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 500px;
+            padding: 4px;
+            height: 100%;
+            border:1px solid #999;
+            display:none;
+            border:2px solid #4662d9;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
     <div class="content">
         <div class="search">
-            <input type="text" name="" id="value" placeholder="请输入课程">
-            <input type="submit" id="sub">
+            <input type="text" name="" id="value" placeholder="">
+            <input type="submit" id="sub" value="百度一下">
+            <div class="show" id="show"></div>
         </div>
-        <div class="show"></div>
+        
     </div>
 </body>
 </html>
