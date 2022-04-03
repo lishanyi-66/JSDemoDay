@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab选项</title>
+    <style>
+        ul{
+            display: flex;
+            flex-direction: row;
+        }
+        li{
+            list-style: none;
+            width: 80px;
+            height: 40px;
+            background-color: #999;
+            margin: 10px;
+            text-align: center;
+            color: white;
+            line-height: 40px;
+            /* margin:auto */
+        }
+        p{
+            display: none;
+        }
+    </style>
+<body>
+    <div class="content">
+        <ul>
+            <li>01</li>
+            <li>02</li>
+            <li>03</li>
+            <li>04</li>
+        </ul>
+        <div class="img">
+            <p style="display: block;">001</p>
+            <p>002</p>
+            <p>003</p>
+            <p>004</p>
+        </div>
+    </div>
+    <script>
+        let li=document.getElementsByTagName("li")
+        let p=document.getElementsByTagName("p")
+
+        // 循环li
+        for(let i=0;i<li.length;i++){
+            // 鼠标移入时li[i]
+            li[i].onmouseover=function(){
+                this.style.backgroundColor ="#eee555"
+                // this.style.color ="#000000"
+                
+            }
+            // 鼠标移出时
+            li[i].onmouseout=function(){
+                this.style.backgroundColor ="#999"
+            }
+        }
+    </script>
+</body>
+</html>
