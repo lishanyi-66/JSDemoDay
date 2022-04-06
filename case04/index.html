@@ -41,20 +41,31 @@
         </div>
     </div>
     <script>
-        let li=document.getElementsByTagName("li")
-        let p=document.getElementsByTagName("p")
+        // 获取id封装成一个函数&()方便调用
+        function $(id){
+            return typeof id === 'string'? document.getElementsByTagName(id):id;
+        }
+        
+        window.onload=function(){
+            let li=$("li")
+            let p=$("p")
 
-        // 循环li
-        for(let i=0;i<li.length;i++){
-            // 鼠标移入时li[i]
-            li[i].onmouseover=function(){
-                this.style.backgroundColor ="#eee555"
-                // this.style.color ="#000000"
-                
-            }
-            // 鼠标移出时
-            li[i].onmouseout=function(){
-                this.style.backgroundColor ="#999"
+            // 循环li
+            for(let i=0;i<li.length;i++){
+                // 鼠标移入时li[i]
+                li[i].index = i
+                li[i].onmouseover=function(){
+                    this.style.backgroundColor ="#eee555"
+                    // this.style.color ="#000000"
+                        for(let j=0;j<p.length;j++){
+                            p[j].style.display="none"
+                        }
+                    p[this.index].style.display = "block"
+                }
+                // 鼠标移出时
+                li[i].onmouseout=function(){
+                    this.style.backgroundColor ="#999"
+                }
             }
         }
     </script>
