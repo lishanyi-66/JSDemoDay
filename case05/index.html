@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全选，全不选，反选</title>
+</head>
+<body>
+    <form>
+        <p><input type="checkbox" id=""> 张三</p>
+        <p><input type="checkbox" id=""> 李四</p>
+        <p><input type="checkbox" id=""> 小红</p>
+        <p><input type="checkbox" id=""> 小绿</p>
+        
+    </form>
+    <button onclick="getall(0)">全选</button>
+    <button onclick="getall(1)">全不选</button>
+    <button onclick="getall(2)">反选</button>
+    
+    <script>
+        // 封装函数$()
+        function $(id){
+            return typeof id === "string"?document.getElementsByTagName(id):id
+        }
+        window.onload=function(){
+            let btn = $("button")
+            let inp = $("input")
+            // 封装一个判断函数
+            function getall(num){
+                for(let i=0;i<inp.length;i++){
+                        if(num==0){
+                            inp[i].checked = true
+                        }else if(num==1){
+                            inp[i].checked = false
+                        }else{
+                            inp[i].checked=!inp[i].checked
+                        }
+                    }
+            }
+        }
+    </script>
+</body>
+</html>
